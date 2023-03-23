@@ -7,13 +7,13 @@ const ReviewItemsPriorityLabel = (props) => {
     const { priority } = props
 
     switch (true) {
-        case (priority < 0):
+        case (priority === "low"):
             return <Button variant="secondary" size='sm'>Low</Button>
-        case (priority < 4):
+        case (priority === "standard"):
             return <Button variant="primary" size='sm'>Standard</Button>
-        case (priority < 6):
+        case (priority === "medium"):
             return <Button variant="warning" size='sm'>Medium</Button>
-        case (priority < 8):
+        case (priority === "high"):
             return <Button variant="danger" size='sm'>High</Button>
     }
 }

@@ -17,14 +17,26 @@ class DashboardPage extends React.Component {
     render() {
         return (
             <div className='dashboard-container'>
-                <h1 className='dashboard-title'>Dashboard</h1>
+                <h1 style={{"marginBottom": "2rem"}}>Dashboard</h1>
                 <Tabs
                     defaultActiveKey="all-entities"
                     id="dashboard-options"
                     className="mb-3"
                 >
                     <Tab eventKey="all-entities" title="All Entities">
-                        <ReviewItems />
+                        <ReviewItems filter={"all"}/>
+                    </Tab>
+                    <Tab eventKey="high-entities" title="High Priority">
+                        <ReviewItems filter={"high"}/>
+                    </Tab>
+                    <Tab eventKey="medium-entities" title="Medium Priority">
+                        <ReviewItems filter={"medium"}/>
+                    </Tab>
+                    <Tab eventKey="standard-entities" title="Standard Priority">
+                        <ReviewItems filter={"standard"}/>
+                    </Tab>
+                    <Tab eventKey="low-entities" title="Low Priority">
+                        <ReviewItems filter={"low"}/>
                     </Tab>
                 </Tabs>
             </div>
